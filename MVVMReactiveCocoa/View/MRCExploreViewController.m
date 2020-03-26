@@ -41,8 +41,13 @@
         self.viewModel.itemSize = CGSizeMake(796.0 / 3, 390.0 / 3);
         self.viewModel.itemSpacing = 5;
     } else {
-        self.viewModel.itemSize = CGSizeMake(1060.0 / 2, 520.0 / 2);
-        self.viewModel.itemSpacing = 5;
+        if (iPhoneX) {
+            self.viewModel.itemSize = CGSizeMake(750.0 / 2, 304.0 / 2);
+            self.viewModel.itemSpacing = 0;
+        } else {
+            self.viewModel.itemSize = CGSizeMake(1060.0 / 2, 520.0 / 2);
+            self.viewModel.itemSpacing = 5;
+        }
     }
 
     [super viewDidLoad];
@@ -59,6 +64,7 @@
     MRCSearchBar *searchBar = [[MRCSearchBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 44)];
     searchBar.delegate = self;
     self.navigationItem.titleView = searchBar;
+    
     [self.searchController setValue:searchBar forKey:@"searchBar"];
     
     RAC(searchBar, placeholder) = [RACObserve(self.viewModel.searchResultsViewModel, language) map:^(NSDictionary *language) {
@@ -66,11 +72,9 @@
     }];
     
     self.switchLanguageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [searchBar addSubview:self.switchLanguageButton];
     
-    self.switchLanguageButton.frame = CGRectMake(0, 8, 28, 28);
+    self.switchLanguageButton.frame = CGRectMake(0, 0, 28, 28);
     self.switchLanguageButton.backgroundColor = [UIColor whiteColor];
-    self.switchLanguageButton.hidden = YES;
     
     self.switchLanguageButton.layer.cornerRadius  = 5;
     self.switchLanguageButton.layer.masksToBounds = YES;
@@ -82,7 +86,13 @@
     
     self.definesPresentationContext = YES;
 
-    LCFInfiniteScrollView *infiniteScrollView = [[LCFInfiniteScrollView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), self.viewModel.itemSize.height)];
+    CGFloat scrollViewY = iPhoneX ? 88 : 64;
+    
+    if (IOS11) {
+        scrollViewY += 12;
+    }
+    
+    LCFInfiniteScrollView *infiniteScrollView = [[LCFInfiniteScrollView alloc] initWithFrame:CGRectMake(0, scrollViewY, CGRectGetWidth(self.view.frame), self.viewModel.itemSize.height)];
     [self.view addSubview:infiniteScrollView];
     
     infiniteScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -101,12 +111,12 @@
         CGFloat width  = CGRectGetWidth(infiniteScrollView.frame);
         CGFloat height = CGRectGetHeight(infiniteScrollView.frame);
         
-        CGFloat deltaY = contentOffset.CGPointValue.y - (-(64 + height));
+        CGFloat deltaY = contentOffset.CGPointValue.y - (-(scrollViewY + height));
        
         if (deltaY <= 0) {
-            return [NSValue valueWithCGRect:CGRectMake(0, 64, width, height)];
+            return [NSValue valueWithCGRect:CGRectMake(0, scrollViewY, width, height)];
         } else {
-            return [NSValue valueWithCGRect:CGRectMake(0, 64 - deltaY, width, height)];
+            return [NSValue valueWithCGRect:CGRectMake(0, scrollViewY - deltaY, width, height)];
         }
     }];
     
@@ -119,7 +129,18 @@
 }
 
 - (UIEdgeInsets)contentInset {
-    return UIEdgeInsetsMake(64 + self.viewModel.itemSize.height, 0, 49, 0);
+    CGFloat top = 0;
+    
+    top += iPhoneX ? 88 : 64;
+    top += self.viewModel.itemSize.height;
+    
+    if (IOS11) {
+        top += 12;
+    }
+    
+    CGFloat bottom = iPhoneX ? 83 : 49;
+    
+    return UIEdgeInsetsMake(top, 0, bottom, 0);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView dequeueReusableCellWithIdentifier:(NSString *)identifier forIndexPath:(NSIndexPath *)indexPath {
@@ -136,9 +157,13 @@
 
 #pragma mark - UISearchBarDelegate
 
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+- (void)searchBarTextDidBeginEditing:(MRCSearchBar *)searchBar {
     self.searchController.active = YES;
-    self.switchLanguageButton.hidden = NO;
+    
+    UIImageView *imageView = searchBar.imageView;
+    imageView.userInteractionEnabled = YES;
+    [imageView addSubview:self.switchLanguageButton];
+    self.switchLanguageButton.center = CGPointMake(CGRectGetWidth(imageView.frame) * 0.5, CGRectGetHeight(imageView.frame) * 0.5);
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
@@ -149,7 +174,7 @@
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
     if (searchBar.text.length == 0) {
-        self.switchLanguageButton.hidden = YES;
+        [self.switchLanguageButton removeFromSuperview];
     }
 }
 

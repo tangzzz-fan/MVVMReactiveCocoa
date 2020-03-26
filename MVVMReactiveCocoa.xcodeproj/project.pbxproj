@@ -151,7 +151,6 @@
 		24A49AE31CDE0BFD0039A424 /* MRCTrendingReposViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A49AE11CDE0BFD0039A424 /* MRCTrendingReposViewController.m */; };
 		24A49AE41CDE0BFD0039A424 /* MRCTrendingReposViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A49AE21CDE0BFD0039A424 /* MRCTrendingReposViewController.xib */; };
 		24A49AE71CDE0C110039A424 /* MRCTrendingReposViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A49AE61CDE0C110039A424 /* MRCTrendingReposViewModel.m */; };
-		24A7499C1BDE5CCF002B46A3 /* JSPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A7499B1BDE5CCE002B46A3 /* JSPatch.framework */; };
 		24A749A01BDE5F75002B46A3 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24A7499F1BDE5F75002B46A3 /* JavaScriptCore.framework */; };
 		24AF976B1B01E19000E2A737 /* UISearchBar+MRCShowsCancelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AF976A1B01E19000E2A737 /* UISearchBar+MRCShowsCancelButton.m */; };
 		24AF977E1B02292700E2A737 /* MRCSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AF977D1B02292700E2A737 /* MRCSearch.m */; };
@@ -659,7 +658,6 @@
 		24A49AE21CDE0BFD0039A424 /* MRCTrendingReposViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MRCTrendingReposViewController.xib; sourceTree = "<group>"; };
 		24A49AE51CDE0C110039A424 /* MRCTrendingReposViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCTrendingReposViewModel.h; sourceTree = "<group>"; };
 		24A49AE61CDE0C110039A424 /* MRCTrendingReposViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCTrendingReposViewModel.m; sourceTree = "<group>"; };
-		24A7499B1BDE5CCE002B46A3 /* JSPatch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSPatch.framework; path = JSPatch/JSPatch.framework; sourceTree = "<group>"; };
 		24A7499F1BDE5F75002B46A3 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		24AF97691B01E19000E2A737 /* UISearchBar+MRCShowsCancelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+MRCShowsCancelButton.h"; sourceTree = "<group>"; };
 		24AF976A1B01E19000E2A737 /* UISearchBar+MRCShowsCancelButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+MRCShowsCancelButton.m"; sourceTree = "<group>"; };
@@ -797,7 +795,6 @@
 			files = (
 				24B76A281D92C1C2000A3CE1 /* MobileCoreServices.framework in Frameworks */,
 				24A749A01BDE5F75002B46A3 /* JavaScriptCore.framework in Frameworks */,
-				24A7499C1BDE5CCF002B46A3 /* JSPatch.framework in Frameworks */,
 				2424531F1A80D85300FFFCC1 /* OctoKit.framework in Frameworks */,
 				2424532C1A80D87300FFFCC1 /* AFNetworking.framework in Frameworks */,
 				242453301A80D87D00FFFCC1 /* ISO8601DateFormatter.framework in Frameworks */,
@@ -1018,9 +1015,9 @@
 				24DF45841A6BF04B00F23474 /* MRCSegmentedControlController.m */,
 				2496742F1A73F5490032771B /* MRCWebViewController.h */,
 				249674301A73F5490032771B /* MRCWebViewController.m */,
+				24E84E821AEFC270003F700C /* MRCWebViewController.xib */,
 				24116E481A8CC62700D25218 /* MRCNavigationController.h */,
 				24116E491A8CC62700D25218 /* MRCNavigationController.m */,
-				24E84E821AEFC270003F700C /* MRCWebViewController.xib */,
 				24FDDEE31B31BDE20040B5C3 /* UINavigationItem+MRCBackBarButtonItem.h */,
 				24FDDEE41B31BDE20040B5C3 /* UINavigationItem+MRCBackBarButtonItem.m */,
 				24AF97691B01E19000E2A737 /* UISearchBar+MRCShowsCancelButton.h */,
@@ -1500,7 +1497,6 @@
 			children = (
 				24B76A271D92C1C2000A3CE1 /* MobileCoreServices.framework */,
 				24A7499F1BDE5F75002B46A3 /* JavaScriptCore.framework */,
-				24A7499B1BDE5CCE002B46A3 /* JSPatch.framework */,
 				24123E471AEE8AD300D5A074 /* libz.dylib */,
 				242452E21A80D78800FFFCC1 /* OctoKit.xcodeproj */,
 				242453101A80D81700FFFCC1 /* OctoKitDependencies.xcodeproj */,
@@ -1600,6 +1596,8 @@
 					};
 					242D4FED1A64B6FA0026ABC6 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = V45CY933KN;
+						ProvisioningStyle = Manual;
 						TestTargetID = 242D4FD41A64B6FA0026ABC6;
 					};
 				};
@@ -1856,13 +1854,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVVMReactiveCocoa-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4D0057EB98400EC217E50A13 /* [CP] Embed Pods Frameworks */ = {
@@ -1886,9 +1887,64 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MVVMReactiveCocoa/Pods-MVVMReactiveCocoa-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/Appirater/Appirater.bundle,
+				"${PODS_ROOT}/FormatterKit/Localizations/ar.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/ca.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/cs.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/da.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/de.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/el.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/en.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/es.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/fr.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/he.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/hu.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/id.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/it.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/ja.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/ko.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/ms.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/nb.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/nl.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/nn.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/pl.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/pt.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/pt_BR.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/ro.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/ru.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/sv.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/th.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/tr.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/uk.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/vi.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/zh-Hans.lproj",
+				"${PODS_ROOT}/FormatterKit/Localizations/zh-Hant.lproj",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_amatorka.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_miss_etikate.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_1.png",
+				"${PODS_ROOT}/GPUImage/framework/Resources/lookup_soft_elegance_2.png",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/OcticonsIOS/OcticonsIOS/octicons.ttf",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/UMSocialSDKResourcesNew.bundle",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_Extra_Frameworks/SinaSSO/WeiboSDK.bundle",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/SocialSDKXib/UMSCommentDetailController.xib",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/SocialSDKXib/UMSCommentInputController.xib",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/SocialSDKXib/UMSCommentInputControlleriPad.xib",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/SocialSDKXib/UMShareEditViewController.xib",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/SocialSDKXib/UMShareEditViewControlleriPad.xib",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/SocialSDKXib/UMSLoginViewController.xib",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/SocialSDKXib/UMSnsAccountViewController.xib",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/SocialSDKXib/UMSShareListController.xib",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/en.lproj",
+				"${PODS_ROOT}/UMengSocial/Umeng_SDK_Social_iOS_ARM64_4.4/UMSocial_Sdk_4.4/zh-Hans.lproj",
+				"${PODS_ROOT}/WebViewJavascriptBridge/WebViewJavascriptBridge/WebViewJavascriptBridge.js.txt",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1931,13 +1987,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVVMReactiveCocoaTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2233,6 +2292,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Chunfeng Lei (5M34Q825AP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V45CY933KN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2241,7 +2302,6 @@
 					"$(PROJECT_DIR)/OctoKit/Carthage/Checkouts/Mantle/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/OctoKit/External/OctoKitDependencies/build/Debug-iphoneos",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/JSPatch",
 				);
 				GCC_PREFIX_HEADER = "MVVMReactiveCocoa/MVVMReactiveCocoa-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2264,7 +2324,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leichunfeng.MVVMReactiveCocoa;
 				PRODUCT_NAME = GitBucket;
-				PROVISIONING_PROFILE = "f2d7027c-e4fa-4493-b212-f488ed36b32e";
+				PROVISIONING_PROFILE = "b7f7b6c8-ff5b-4fb8-97f6-b64f8c0ab281";
 				PROVISIONING_PROFILE_SPECIFIER = "iOS Development: MVVMReactiveCocoa";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2276,7 +2336,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Chunfeng Lei (V45CY933KN)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chunfeng Lei (V45CY933KN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = V45CY933KN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2285,7 +2346,6 @@
 					"$(PROJECT_DIR)/OctoKit/Carthage/Checkouts/Mantle/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/OctoKit/External/OctoKitDependencies/build/Debug-iphoneos",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/JSPatch",
 				);
 				GCC_PREFIX_HEADER = "MVVMReactiveCocoa/MVVMReactiveCocoa-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -2308,7 +2368,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leichunfeng.MVVMReactiveCocoa;
 				PRODUCT_NAME = GitBucket;
-				PROVISIONING_PROFILE = "2c0b57c2-b051-442f-9863-d20daa08bb05";
+				PROVISIONING_PROFILE = "a56c8250-a0f4-4905-812a-c366a69d1b3e";
 				PROVISIONING_PROFILE_SPECIFIER = "iOS Distribution: MVVMReactiveCocoa";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2319,6 +2379,10 @@
 			baseConfigurationReference = BEC741F295238CC28B2C04E5 /* Pods-MVVMReactiveCocoaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chunfeng Lei (5M34Q825AP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chunfeng Lei (5M34Q825AP)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = V45CY933KN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2333,6 +2397,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leichunfeng.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitBucket.app/GitBucket";
 			};
 			name = Debug;
@@ -2342,6 +2407,10 @@
 			baseConfigurationReference = 6744AD26DE1A37FD41B664E6 /* Pods-MVVMReactiveCocoaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Chunfeng Lei (V45CY933KN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chunfeng Lei (V45CY933KN)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = V45CY933KN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2352,6 +2421,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leichunfeng.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitBucket.app/GitBucket";
 			};
 			name = Release;

@@ -210,9 +210,15 @@ typedef id   (^IDBlock_id)  (id);
 #define MRC_BUGTAGS_APP_KEY @"69f973866d636e2b4b3f42ef1ec2caec"
 
 ///--------
-/// JSPatch
+/// Device
 ///--------
 
-#define MRC_JSPATCH_APP_KEY @"0b4fa7df769bf223"
+#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+///--------
+/// Version
+///--------
+
+#define IOS11 @available(iOS 11.0, *)
 
 #endif
